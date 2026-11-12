@@ -1,0 +1,58 @@
+:root
+{
+    /* --font-logo: "Bungee Inline";
+    --font-headings: "Bungee Inline";
+    --font-navigation: "Bungee Inline";
+    --font-primary: "Quantico";
+    --font-secondary: "Play";*/
+    
+    --color-bg-body: indianred;
+    --color-bg-aside: rgb(250, 186, 149);
+    --color-bg-aside-highlight: rgb(255, 206, 178);
+    --color-bg-header: rgb(250, 222, 199);
+    --color-bg-header-highlight: rgb(255, 225, 200);
+    --color-bg-main: rgb(202, 169, 143);
+    --color-bg-logo: black;
+
+    --color-font-headings: indianred;
+    --color-font-primary: rgb(63, 30, 13);
+    --color-font-secondary: rgb(90, 78, 23);
+    --color-shadow: rgb(97, 96, 96); 
+
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+*,
+*::before,
+*::after
+{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+img
+{
+    display: block;
+}
+
+ul
+{
+    list-style: none;
+}
+
+a
+{
+    text-decoration: none;
+    color: var(--color-font-primary)
+}
+
+body
+{
+    min-height: 100vh;
+    display: flex;
+    background-color: var(--color-bg-body);
+}
