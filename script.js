@@ -22,7 +22,60 @@ Book.prototype.info = function()
 
 function addBookToLibrary(title, author, pages, read)
 {
-    const book = new Book(title, author, read);
-
+    const book = new Book(title, author, pages, read);
     books.push(book);
 }
+
+function addNewRow()
+{
+    const tableBody = document.querySelector(".table-body-area");
+    const row = document.createElement("tr");
+
+    tableBody.append(row);
+
+    return row;
+}
+
+function addProperties(book, row)
+{
+    const propertiesNumber = Object.keys(book).length;
+    for (let i = 1; i < propertiesNumber; ++i)
+    {
+        const property = Object.values(book)[i];
+        addProperty(property, row);
+    }
+}
+function addProperty(property, row)
+{
+    const cell = document.createElement("td");
+    cell.textContent = property;
+    row.append(cell);
+}
+
+function displayBook(book)
+{
+    const row = addNewRow();
+    addProperties(book, row);
+}
+
+function clearTable()
+{
+    const tableBody = document.querySelector(".table-body-area");
+    tableBody.replaceChildren();
+}
+
+
+function displayBooks(books)
+{
+    clearTable();
+    for (const book of books)
+    {
+        displayBook(book);
+    }   
+}
+
+addBookToLibrary("Balls Scratching 101", "Boris", 666, false);
+addBookToLibrary("Balls Scratching 101", "Boris", 666, false);
+addBookToLibrary("Balls Scratching 101", "Boris", 666, false);
+
+displayBooks(books);
