@@ -21,8 +21,34 @@
             </tr>
         </thead>
         <tbody class="table-body-area">
-
         </tbody>
     </table>
+    <dialog id="add-book-dialog" closedby="any">
+        <form id="add-book-form" method="dialog">
+            <ul>
+                <li>
+                    <label for="book-title">TITLE</label>
+                    <input type="text" name="book-title" id="book-title">
+                </li>
+                <li>
+                    <label for="book-author">AUTHOR</label>
+                    <input type="text" name="book-author" id="book-author">
+                </li>
+                <li>
+                    <label for="book-pages">PAGES</label>
+                    <input type="tel" name="book-pages" id="book-pages">
+                </li>
+                <li>
+                    <label for="book-read">FINISHED READING?</label>
+                    <input type="checkbox" name="book-read" id="book-read">
+                </li>
+                <div class="form-controls">
+                    <button type="submit">Add</button>
+                    <button type="button" commandfor="add-book-dialog" command="close">Cancel</button>
+                </div>
+            </ul>
+        </form>
+    </dialog>
+    <button type="button" commandfor="add-book-dialog" command="show-modal">Add Book</button>
 </body>
 </html>
