@@ -74,15 +74,18 @@ function displayBooks(books)
     }   
 }
 
-const bookDialog = document.getElementById("add-book-dialog");
 const bookForm = document.getElementById("add-book-form");
+const bookFormClear = document.getElementById("form-control-clear");
 const bookFormInputs = document.querySelectorAll("input");
 
 bookForm.addEventListener("submit", () => 
     {
         addBookToLibrary(bookFormInputs[0].value, bookFormInputs[1].value, bookFormInputs[2].value, bookFormInputs[3].checked);
         displayBooks(books);
+        bookForm.reset();
     });
+
+bookForm.addEventListener("click", () => bookForm.reset());
 
 addBookToLibrary("Balls Scratching 101", "Boris", 666, false);
 addBookToLibrary("Balls Scratching 101", "Boris", 666, false);
