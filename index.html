@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat Library</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="module" src="script.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
 </head>
 <body>
     <table>
@@ -28,15 +28,15 @@
             <ul>
                 <li>
                     <label for="book-title">TITLE</label>
-                    <input type="text" name="book-title" id="book-title" required>
+                    <input type="text" name="book-title" id="book-title" minlength="2" required>
                 </li>
                 <li>
                     <label for="book-author">AUTHOR</label>
-                    <input type="text" name="book-author" id="book-author" required>
+                    <input type="text" name="book-author" id="book-author" minlength="2" required>
                 </li>
                 <li>
                     <label for="book-pages">PAGES</label>
-                    <input type="tel" name="book-pages" id="book-pages" required>
+                    <input type="tel" name="book-pages" id="book-pages" pattern="[0-9]+" inputmode="numeric" required>
                 </li>
                 <li>
                     <label for="book-read">FINISHED READING?</label>
