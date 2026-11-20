@@ -1,5 +1,5 @@
 import {Book} from "./book.js"
-
+ 
 const ID_INDEX = 0;
 const START_INDEX = 1;
 const CHECKBOX_INDEX = 4;
@@ -36,13 +36,15 @@ Library.prototype.display = function()
 
 function displayBook(book)
 {
-    const row = addNewRow();
+    const row = addNewRow(book);
     addProperties(book, row);
 }
-function addNewRow()
+function addNewRow(book)
 {
     const tableBody = document.querySelector(".table-body-area");
     const row = document.createElement("tr");
+
+    row.dataset.id = book.id;
 
     tableBody.append(row);
 
@@ -56,6 +58,7 @@ function addProperties(book, row)
     {
         addProperty(book, i, row);
     }
+    addRemoveButton(book, row);
 }
 function addProperty(book, index, row)
 {
