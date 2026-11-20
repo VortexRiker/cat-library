@@ -23,15 +23,7 @@ Library.prototype.addBook = function(title, author, pages, read)
 {
     const book = new Book(title, author, pages, read);
     this.books.push(book);
-}
-
-Library.prototype.display = function()
-{
-    clearTable();
-    for (const book of this.books)
-    {
-        displayBook(book);
-    }
+    displayBook(book);
 }
 
 function displayBook(book)
@@ -58,7 +50,7 @@ function addProperties(book, row)
     {
         addProperty(book, i, row);
     }
-    addRemoveButton(book, row);
+    addRemoveButton(row);
 }
 function addProperty(book, index, row)
 {
@@ -88,16 +80,8 @@ function createCheckbox(property, book)
 
     checkbox.type = "checkbox";
     checkbox.checked = property;
-    addCheckboxListener(checkbox, book);
 
     return checkbox;
-}
-function addCheckboxListener(checkbox, book)
-{
-    checkbox.addEventListener("click", () =>
-    {
-        book.read = !book.read;
-    });
 }
 
 function addTextProperty(property, cell)
@@ -105,11 +89,15 @@ function addTextProperty(property, cell)
     cell.textContent = property;
 }
 
-function clearTable()
+function addRemoveButton(row)
 {
-    const tableBody = document.querySelector(".table-body-area");
-    tableBody.replaceChildren();
-}
+    const cell = document.createElement("td");
+    const button = document.createElement("button");
 
+    button.type = "button";
+    button.textContent = "Remove";
+    cell.append(button);
+    row.append(cell);
+}
 export const library = new Library(); 
 
