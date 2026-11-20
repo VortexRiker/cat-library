@@ -93,8 +93,7 @@ function addCheckboxListener(checkbox, book)
 {
     checkbox.addEventListener("click", () =>
     {
-        let checkboxProperty = Object.values(book)[CHECKBOX_INDEX];
-        checkboxProperty = !checkboxProperty;
+        book.read = !book.read;
     });
 }
 

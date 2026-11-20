@@ -8,7 +8,7 @@ function resetForm()
 
 function submitForm()
 {
-    const bookFormInputs = document.querySelectorAll("input");
+    const bookFormInputs = document.querySelectorAll(".form-input");
     library.addBook(bookFormInputs[0].value, bookFormInputs[1].value, bookFormInputs[2].value, bookFormInputs[3].checked);
     library.display();
     resetForm();
