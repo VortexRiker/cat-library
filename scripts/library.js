@@ -1,9 +1,4 @@
 import {Book} from "./book.js"
-import { displayBook, removeBook } from "./table.js";
- 
-const ID_INDEX = 0;
-const START_INDEX = 1;
-const CHECKBOX_INDEX = 4;
 
 function Library()
 {
@@ -16,23 +11,25 @@ function Library()
 }
 Library.prototype.getBook = function(id)
 {
-    const book = this.book.find(book => book.id === id);
+    const book = this.books.find(book => book.id === id);
 
     return book;
 }
 Library.prototype.removeBook = function(id)
 {
-    const bookIndex = getLibraryIndex(id);
+    const bookIndex = getLibraryIndex(this, id);
 
     this.books.splice(bookIndex, 1);
-
 }
-Library.prototype.addBook = function(title, author, pages, read)
+Library.prototype.addWithCopy = function(book)
+{
+    this.books.push(book);
+}
+Library.prototype.addWithParameters = function(title, author, pages, read)
 {
     const book = new Book(title, author, pages, read);
 
-    this.books.push(book);
-    displayBook(book);
+    this.addBook(book);
 }
 
 function getLibraryIndex(library, id)
