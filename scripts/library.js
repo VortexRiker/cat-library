@@ -1,4 +1,5 @@
 import {Book} from "./book.js"
+import { displayBook, removeBook } from "./table.js";
  
 const ID_INDEX = 0;
 const START_INDEX = 1;
@@ -19,85 +20,27 @@ Library.prototype.getBook = function(id)
 
     return book;
 }
+Library.prototype.removeBook = function(id)
+{
+    const bookIndex = getLibraryIndex(id);
+
+    this.books.splice(bookIndex, 1);
+
+}
 Library.prototype.addBook = function(title, author, pages, read)
 {
     const book = new Book(title, author, pages, read);
+
     this.books.push(book);
     displayBook(book);
 }
 
-function displayBook(book)
+function getLibraryIndex(library, id)
 {
-    const row = addNewRow(book);
-    addProperties(book, row);
-}
-function addNewRow(book)
-{
-    const tableBody = document.querySelector(".table-body-area");
-    const row = document.createElement("tr");
+    const book = library.getBook(id);
 
-    row.dataset.id = book.id;
-
-    tableBody.append(row);
-
-    return row;
-}
-function addProperties(book, row)
-{
-    const propertiesNumber = Object.keys(book).length;
-
-    for (let i = START_INDEX; i < propertiesNumber; ++i)
-    {
-        addProperty(book, i, row);
-    }
-    addRemoveButton(row);
-}
-function addProperty(book, index, row)
-{
-    const cell = document.createElement("td");
-    const property = Object.values(book)[index];
-
-    if (index === CHECKBOX_INDEX)
-    {
-        addCheckboxProperty(property, book, cell);
-    }
-    else
-    {
-        addTextProperty(property, cell);
-    }
-    row.append(cell);
+    return library.books.indexOf(book);
 }
 
-function addCheckboxProperty(property, book, cell)
-{
-    const checkbox = createCheckbox(property, book);
-
-    cell.append(checkbox);
-}
-function createCheckbox(property, book)
-{
-    const checkbox = document.createElement("input");
-
-    checkbox.type = "checkbox";
-    checkbox.checked = property;
-
-    return checkbox;
-}
-
-function addTextProperty(property, cell)
-{
-    cell.textContent = property;
-}
-
-function addRemoveButton(row)
-{
-    const cell = document.createElement("td");
-    const button = document.createElement("button");
-
-    button.type = "button";
-    button.textContent = "Remove";
-    cell.append(button);
-    row.append(cell);
-}
 export const library = new Library(); 
 
