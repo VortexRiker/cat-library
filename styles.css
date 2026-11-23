@@ -6,22 +6,17 @@
     --font-primary: "Quantico";
     --font-secondary: "Play";*/
     
-    --color-bg-body: indianred;
-    --color-bg-aside: rgb(250, 186, 149);
-    --color-bg-aside-highlight: rgb(255, 206, 178);
-    --color-bg-header: rgb(250, 222, 199);
-    --color-bg-header-highlight: rgb(255, 225, 200);
-    --color-bg-main: rgb(202, 169, 143);
-    --color-bg-logo: black;
+    --color-bg-body: rgb(71, 104, 93);
+    --color-content-primary: rgb(69, 141, 137);
+    --color-content-secondary: rgb(97, 197, 192);
 
-    --color-font-headings: indianred;
-    --color-font-primary: rgb(63, 30, 13);
-    --color-font-secondary: rgb(90, 78, 23);
-    --color-shadow: rgb(97, 96, 96); 
+    --color-font-primary: rgb(123, 230, 197);
+    --color-font-secondary: rgb(42, 80, 68);
 
     box-sizing: border-box;
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 24px;
+    color: var(--color-font-primary);
     line-height: 1.5;
 }
 
@@ -43,6 +38,7 @@ body
 {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--color-bg-body);
@@ -50,17 +46,57 @@ body
 
 table
 {
-    border: 2px solid red;
-    width: 80%;
+    width: 90%;
     table-layout: fixed;
     border-collapse: collapse;
 }
+
+td, th
+{
+    border: 6px solid var(--color-content-secondary);
+    padding: 20px;
+    vertical-align: top;
+}
+
+tr *
+{
+    text-align: center;
+}
+tr :nth-child(3)
+{
+    text-align: right;
+}
+tr :nth-child(3),
+tr :nth-child(4)
+{
+    width: 5%;
+}
+tr :nth-child(1)
+{
+    width: 60%;
+}
+tr :nth-child(2)
+{
+    width: 20%;
+}
+
+tr :last-child
+{
+
+}
+tr:nth-child(even)
+{
+    background-color: var(--color-content-primary);
+    color: var(--color-font-secondary);
+}
+
 caption
 {
     padding: 1rem;
     font-style: italic;
-    caption-side: bottom;
-    letter-spacing: 1px;
+    caption-side: top;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
 }
 
 #add-book-dialog:open

@@ -1,4 +1,4 @@
-import { library } from "./library.js";
+import { addBook } from "./table.js";
 
 function resetForm()
 {
@@ -9,8 +9,7 @@ function resetForm()
 function submitForm()
 {
     const bookFormInputs = document.querySelectorAll(".form-input");
-    library.addBook(bookFormInputs[0].value, bookFormInputs[1].value, bookFormInputs[2].value, bookFormInputs[3].checked);
-    library.display();
+    addBook(bookFormInputs[0].value, bookFormInputs[1].value, bookFormInputs[2].value, bookFormInputs[3].checked);
     resetForm();
 };
 

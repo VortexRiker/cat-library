@@ -9,32 +9,31 @@ function Library()
 
     this.books = [];
 }
-Library.prototype.getBook = function(id)
+Library.prototype.add = function(title, author, pages, read)
 {
-    const book = this.books.find(book => book.id === id);
+    const book = new Book(title, author, pages, read);
+
+    this.books.push(book);
 
     return book;
 }
-Library.prototype.removeBook = function(id)
+Library.prototype.remove = function(id)
 {
     const bookIndex = getLibraryIndex(this, id);
 
     this.books.splice(bookIndex, 1);
 }
-Library.prototype.addWithCopy = function(book)
+Library.prototype.get = function(id)
 {
-    this.books.push(book);
-}
-Library.prototype.addWithParameters = function(title, author, pages, read)
-{
-    const book = new Book(title, author, pages, read);
+    const book = this.books.find(book => book.id === id);
 
-    this.addBook(book);
+    return book;
 }
+
 
 function getLibraryIndex(library, id)
 {
-    const book = library.getBook(id);
+    const book = library.get(id);
 
     return library.books.indexOf(book);
 }
