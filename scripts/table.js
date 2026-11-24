@@ -87,7 +87,7 @@ function addRemoveButton(row)
     const button = document.createElement("button");
 
     button.type = "button";
-    button.textContent = "Remove";
+    button.textContent = "\u2715";
     button.classList.add("remove-button");
     cell.append(button);
     row.append(cell);

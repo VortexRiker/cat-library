@@ -9,9 +9,16 @@
     --color-bg-body: rgb(71, 104, 93);
     --color-content-primary: rgb(69, 141, 137);
     --color-content-secondary: rgb(97, 197, 192);
+    --color-alt-primary: rgb(114, 75, 66);
+    --color-alt-secondary: rgb(136, 66, 66);
+    --color-alt-active: rgb(117, 74, 74);
 
     --color-font-primary: rgb(123, 230, 197);
     --color-font-secondary: rgb(149, 255, 221);
+
+    --color-font-alt-primary: rgba(255, 65, 65, 0.397);
+    --color-font-alt-secondary: rgb(253, 53, 53);
+    --color-font-alt-active: rgba(95, 26, 26, 0.541);
 
     box-sizing: border-box;
     font-family: sans-serif;
@@ -98,9 +105,37 @@ tr:nth-child(even)
     border: 3px solid var(--color-font-secondary);
     border-radius: 10px;
 }
-.read-checkbox::before
+.read-checkbox:checked
 {
-    
+    background-image: url("./media/icons/checkmark.svg");
+}
+
+.remove-button
+{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 5px solid var(--color-font-alt-primary);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--color-font-alt-primary);
+    background-color: var(--color-alt-primary);
+}
+.remove-button:hover
+{
+    font-weight: bold;
+    border: 5px solid var(--color-font-alt-secondary);
+    color: var(--color-font-alt-secondary);
+    background-color: var(--color-alt-secondary);
+}
+.remove-button:active
+{
+    font-weight: 400;
+    border: 5px solid var(--color-font-alt-active);
+    color: var(--color-font-alt-active);
+    background-color: var(--color-alt-active);
 }
 
 
