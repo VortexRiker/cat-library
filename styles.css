@@ -11,7 +11,7 @@
     --color-content-secondary: rgb(97, 197, 192);
 
     --color-font-primary: rgb(123, 230, 197);
-    --color-font-secondary: rgb(42, 80, 68);
+    --color-font-secondary: rgb(149, 255, 221);
 
     box-sizing: border-box;
     font-family: sans-serif;
@@ -32,6 +32,11 @@
 img
 {
     display: block;
+}
+
+input
+{
+    appearance: none;
 }
 
 body
@@ -62,33 +67,42 @@ tr *
 {
     text-align: center;
 }
-tr :nth-child(3)
+tr > :nth-child(3)
 {
     text-align: right;
 }
-tr :nth-child(3),
-tr :nth-child(4)
+tr > :nth-child(3),
+tr > :nth-child(4)
 {
-    width: 5%;
+    width: 15%;
 }
-tr :nth-child(1)
+tr > :nth-child(1)
 {
-    width: 60%;
+    width: 40%;
 }
-tr :nth-child(2)
+tr > :nth-child(2)
 {
     width: 20%;
 }
 
-tr :last-child
-{
-
-}
 tr:nth-child(even)
 {
     background-color: var(--color-content-primary);
     color: var(--color-font-secondary);
 }
+
+.read-checkbox
+{
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid var(--color-font-secondary);
+    border-radius: 10px;
+}
+.read-checkbox::before
+{
+    
+}
+
 
 caption
 {

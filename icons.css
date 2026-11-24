@@ -1,0 +1,26 @@
+:root
+{
+    --color-icon-primary: rgb(149, 255, 221);
+    --color-icon-secondary: rgb(123, 230, 197);
+}
+
+.icon-primary
+{
+    color: var(--color-icon-primary);
+}
+
+.icon-secondary
+{
+    color: var(--color-icon-secondary);
+}
+
+.icon:hover .icon-default,
+.icon-hover
+{
+    visibility: hidden;
+}
+
+.icon:hover .icon-hover
+{
+    visibility: visible;
+}
