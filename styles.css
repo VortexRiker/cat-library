@@ -84,18 +84,20 @@ tr > *
     text-align: center;
     vertical-align: middle;
 }
-tr > :nth-child(3),
-tr > :nth-child(4)
-{
-    width: 15%;
-}
-tr > :nth-child(1)
+
+.col-title
 {
     width: 40%;
 }
-tr > :nth-child(2)
+.col-author
 {
     width: 20%;
+}
+.col-pages,
+.col-read
+{
+    width: 15%;
+
 }
 
 tbody > tr > :last-child
