@@ -98,6 +98,11 @@ tr > :nth-child(2)
     width: 20%;
 }
 
+tbody > tr > :last-child
+{
+    visibility: hidden;
+}
+
 tbody > tr > :not(:last-child)
 {
     border-bottom: 4px solid var(--color-font-primary);
@@ -118,6 +123,19 @@ tbody > tr > :nth-child(odd):not(:last-child)
     background-color: var(--color-content-secondary);
     color: var(--color-bg-body);
 }
+
+tbody > tr:hover > :not(:last-child) 
+{
+    filter: brightness(1.2);
+}
+tbody > tr:hover > :last-child 
+{
+    visibility: visible;
+}
+/* tbody:has(> tr:hover) > *:not(:hover)
+{
+    filter: blur(2px);
+} */
 
 .read-checkbox
 {
