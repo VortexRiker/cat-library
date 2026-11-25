@@ -7,14 +7,14 @@
     --font-secondary: "Play";*/
     
     --color-bg-body: rgb(71, 104, 93);
-    --color-content-primary: rgb(69, 141, 137);
-    --color-content-secondary: rgb(97, 197, 192);
+    --color-content-primary: rgb(48, 97, 94);
+    --color-content-secondary: rgb(110, 182, 158);
     --color-alt-primary: rgb(114, 75, 66);
     --color-alt-secondary: rgb(136, 66, 66);
     --color-alt-active: rgb(117, 74, 74);
 
     --color-font-primary: rgb(123, 230, 197);
-    --color-font-secondary: rgb(149, 255, 221);
+    --color-font-secondary: rgba(133, 185, 168, 0.541);
 
     --color-font-alt-primary: rgba(255, 65, 65, 0.397);
     --color-font-alt-secondary: rgb(253, 53, 53);
@@ -63,20 +63,26 @@ table
     border-collapse: collapse;
 }
 
+th
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 6px solid var(--color-font-primary);
+    background-color: var(--color-content-primary);
+    color: var(--color-font-primary);
+}
+
 td, th
 {
-    border: 6px solid var(--color-content-secondary);
-    padding: 20px;
+    
+    padding: 15px 10px;
     vertical-align: top;
 }
 
-tr *
+tr > *
 {
     text-align: center;
-}
-tr > :nth-child(3)
-{
-    text-align: right;
+    vertical-align: middle;
 }
 tr > :nth-child(3),
 tr > :nth-child(4)
@@ -92,10 +98,25 @@ tr > :nth-child(2)
     width: 20%;
 }
 
-tr:nth-child(even)
+tbody > tr > :not(:last-child)
 {
-    background-color: var(--color-content-primary);
-    color: var(--color-font-secondary);
+    border-bottom: 4px solid var(--color-font-primary);
+}
+
+tbody > tr > :first-child
+{
+    border-left: 6px solid var(--color-font-primary);
+}
+
+tbody > tr > :nth-last-child(2)
+{
+    border-right: 6px solid var(--color-font-primary);
+}
+
+tbody > tr > :nth-child(odd):not(:last-child)
+{
+    background-color: var(--color-content-secondary);
+    color: var(--color-bg-body);
 }
 
 .read-checkbox
@@ -112,7 +133,7 @@ tr:nth-child(even)
 
 .remove-button
 {
-    display:flex;
+    display: inline-flex;
     justify-content: center;
     align-items:center;
     width: 2.5rem;
